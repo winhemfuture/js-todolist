@@ -63,7 +63,8 @@ function showList(){
 
     //Create Li Element
     let liDOM = document.createElement('li');
-  
+    //Done Button Added
+    liDOM.addEventListener("click",taskDone);
     //Standardized list element
     liDOM.innerHTML = `${task}<span id="closeButton" class="deleteButton" onclick=deleteItem(${key})><i class="fas fa-trash"></i></span>`;
     
@@ -76,4 +77,8 @@ function showList(){
 function isInvalid(task){
   let res = task.trim() ? true : false;
   return res;
+}
+function taskDone(){
+  //Change with boostrap succes style
+  this.classList.toggle("bg-success");
 }
